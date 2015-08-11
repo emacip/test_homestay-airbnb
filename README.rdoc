@@ -1,0 +1,72 @@
+The purpose of this test is to complete a simple Rails application that allows
+to search for available rooms in host families.
+
+The application is prepopulated with three models: Host, Room, Booking
+
+$ rake db:migrate
+
+will create the basic tables & import sample data, there is no need for you to add more records in the existing tables.
+
+There are a number of tasks to complete:
+
+1) Implement date pickers to search for availability, with the follwing input fields:
+    - Start date: date
+    - End date: date
+    - Number of guests: integer
+    - when you submit the search, the search#index action is triggered
+
+2) Implement the search action (search#index) so that:
+    - the search page returns a list of hosts which have rooms available for that period (start/end_date params from the pickers)
+      and that number of guests (in the same room), showing which rooms are available
+      for that host and period and if those rooms already have any guests in any days within that period.
+
+      For example, for the data provided, search results between 2015-06-01 and 2015-06-07 for 1 guest should be something like:
+
+      host#1: Mr Host 1
+      1 Camden Street
+      room#1 is available (1 booked, 1 free out of 2 total)
+      room#2 is available (0 booked, 2 free out of 2 total)
+
+      host#2: Mr Host 2
+      2 Camden Street
+      room#4 is available (0 booked, 2 free out of 2 total)
+
+      host#4: Mr Host 4
+      4 Camden Street
+      room#8 is available (0 booked, 2 free out of 2 total)
+
+      host#5: Mr Host 5
+      5 Camden Street
+      room#9 is available (1 booked, 1 free out of 2 total)
+      room#10 is available (0 booked, 2 free out of 2 total)
+
+      host#6: Mr Host 6
+      6 Camden Street
+      room#12 is available (0 booked, 2 free out of 2 total)
+
+      (note that host#3 is not present in the list because unavailable between the dates)
+
+   - The search function needs to work out when hosts are available or not, based on their existing bookings in the database:
+     - if the host has no rooms available in the timeframe, it should not be shown
+     - if the host has only one room available in the timeframe, only that room should be shown
+     - if the host has all rooms available, the host and all rooms should be shown
+     - if a room is partially booked (capacity > number of guests booked), it should be shown
+     - consider that searched dates may overlap fully or partially with the booking dates in the database
+
+   - You can add additional classes or models, support tables, structures as you see fit to complete the search functionality
+   - Optionally make the queries efficient/performant
+   - Optionally paginate results, show 5 hosts per page.
+   - Please include a brief description of the approach taken to solve the problem
+
+3) Apply styling to the list of results returned
+   - the host record includes a link to images, please arrange the returned data and image in what you think is a pleasant design
+   - feel free to include CSS/JS frameworks and libraries as you see fit
+   - make a responsive version of the search results and explain any particular design decisions taken in the process
+
+4) Implement a basic JS/Client side validation for the dates
+   - this is to understand how you structure javascript code
+
+Make sure to include instructions on how to run your code correctly for a quick review.
+
+Return the completed task as a .zip file or private repo in GitHub.
+Please do not open a public repository with your solution, you might not want to unwillingly help other candidates :)

@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: rooms
+#
+#  id         :integer          not null, primary key
+#  host_id    :integer
+#  capacity   :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  host_id: 1
+  capacity: 1
+
+two:
+  host_id: 1
+  capacity: 1
