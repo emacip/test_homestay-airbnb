@@ -45,4 +45,6 @@ gem 'annotate',      group: :development
 # bootstrap
 gem 'bootstrap-sass'
 
+# Haml generators for Rails 4
+gem "haml-rails", "~> 0.9"
 
