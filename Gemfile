@@ -48,3 +48,6 @@ gem 'bootstrap-sass'
 # Haml generators for Rails 4
 gem "haml-rails", "~> 0.9"
 
+# Bootstrap Timepicker
+gem 'bootstrap-timepicker-rails'
+
