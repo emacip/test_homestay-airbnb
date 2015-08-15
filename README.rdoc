@@ -1,3 +1,6 @@
+{<img src="https://codeclimate.com/repos/55cdc12f69568061d500a2c9/badges/b16a5a0d3bcd855e7606/gpa.svg" />}[https://codeclimate.com/repos/55cdc12f69568061d500a2c9/feed]
+{<img src="https://codeclimate.com/repos/55cdc12f69568061d500a2c9/badges/b16a5a0d3bcd855e7606/coverage.svg" />}[https://codeclimate.com/repos/55cdc12f69568061d500a2c9/coverage]
+
 The purpose of this test is to complete a simple Rails application that allows
 to search for available rooms in host families.
 
