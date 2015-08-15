@@ -10,6 +10,7 @@
 #
 
 class Room < ActiveRecord::Base
+  include SercheableRoom
   belongs_to :host
   has_many :bookings
 end

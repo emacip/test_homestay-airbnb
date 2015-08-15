@@ -4,10 +4,12 @@ class SearchController < ApplicationController
   end
 
   def search
-    if params[:q].nil?
+
+    if params[:booking].nil?
       @bookings = []
     else
-      @bookings = Booking.search params[:q]
+      byebug
+      @bookings = Booking.search query:{query_string:{fields: ["number_of_guests"], query: "2" }}, size: 2, sort:{id:{order: "asc"}}
     end
   end
 

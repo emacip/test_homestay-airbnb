@@ -13,6 +13,6 @@
 
 
 class Booking < ActiveRecord::Base
-  include Searchable
+  include SercheableBooking
   belongs_to :room
 end
