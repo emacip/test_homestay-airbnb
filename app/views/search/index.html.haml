@@ -9,5 +9,5 @@
         = f.input :start_date, as: :datetime_picker, wrapper: :ranged_datetime
         = f.input :end_date, as: :datetime_picker, wrapper: :ranged_datetime
 
-      = f.input :number_of_guests, :collection =>  1..10, :include_blank => true
+      = f.input :number_of_guests, :collection =>  1..10, :include_blank => true, :input_class => false, :input_html => { :class => "guests" }
       = f.button :submit, 'Search'
