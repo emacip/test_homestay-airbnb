@@ -11,6 +11,8 @@
 #  updated_at       :datetime
 #
 
+
 class Booking < ActiveRecord::Base
+  include Searchable
   belongs_to :room
 end

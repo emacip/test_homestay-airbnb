@@ -56,3 +56,7 @@ gem 'momentjs-rails'
 
 # Debugger
 gem 'byebug'
+
+# ElasticSearch
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'

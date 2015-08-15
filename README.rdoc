@@ -73,3 +73,8 @@ Make sure to include instructions on how to run your code correctly for a quick 
 
 Return the completed task as a .zip file or private repo in GitHub.
 Please do not open a public repository with your solution, you might not want to unwillingly help other candidates :)
+
+
+
+Import Documents Elasticsearch
+-  Booking.__elasticsearch__.import

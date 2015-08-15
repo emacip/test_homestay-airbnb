@@ -4,8 +4,11 @@ class SearchController < ApplicationController
   end
 
   def search
-    byebug
-    hello
+    if params[:q].nil?
+      @bookings = []
+    else
+      @bookings = Booking.search params[:q]
+    end
   end
 
 end
