@@ -13,4 +13,13 @@ class Room < ActiveRecord::Base
   include SercheableRoom
   belongs_to :host
   has_many :bookings
+
+  scope :excluding_ids, lambda { |ids|
+                        where(['id NOT IN (?)', ids]) if ids.any?
+                      }
+
+  scope :including_ids, lambda { |ids|
+                        where(['id IN (?)', ids]) if ids.any?
+                      }
+
 end

@@ -8,9 +8,11 @@ class SearchController < ApplicationController
     if params[:booking].nil?
       @bookings = []
     else
-      byebug
-      @bookings = Booking.search query:{query_string:{fields: ["number_of_guests"], query: "2" }}, size: 2, sort:{id:{order: "asc"}}
+      #@rooms_available = Room.including_ids(Booking.all.map(&:room_id))
+      @bookings = (Booking.search filter:{range:{number_of_guests:{gt: params[:booking][:number_of_guests] }}}, sort:{id:{order: "asc"}}).records.to_a
+      @results  =  Room.excluding_ids(@bookings.map(&:room_id)).limit(6)
     end
   end
 
 end
+
