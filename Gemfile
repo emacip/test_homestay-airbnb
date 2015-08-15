@@ -44,10 +44,11 @@ gem 'annotate',      group: :development
 
 # bootstrap
 gem 'bootstrap-sass'
+gem 'simple_form'
 
 # Haml generators for Rails 4
 gem "haml-rails", "~> 0.9"
 
-# Bootstrap Timepicker
-gem 'bootstrap-timepicker-rails'
-
+# Bootstrap Datepicker
+gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
+gem 'momentjs-rails'

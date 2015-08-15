@@ -11,7 +11,7 @@
  * file per style scope.
  *
  *= base
- *= require bootstrap-timepicker
+ *= require bootstrap-datetimepicker
  *= require_tree .
  *= require_self
  */
