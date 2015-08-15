@@ -1,11 +1,12 @@
+.jumbotron
+  .row
+    .col-md-12
+      %h2{style:'color:#FFF;text-align:center;'} TEST CODE HOMESTAY
 .row
-  .col-md-6
-    %h2 TEST CODE HOMESTAY
-  .col-md-6
-    = simple_form_for @booking do |f|
-      .row.datetimerange
+  .col-md-12
+    = simple_form_for @booking, url: search_path(:id), class:'form-inline', method: :get do |f|
+      = f.input :start_date, as: :datetime_picker, wrapper: :ranged_datetime
+      = f.input :end_date, as: :datetime_picker, wrapper: :ranged_datetime
 
-        = f.input :start_date, as: :datetime_picker, wrapper: :ranged_datetime
-        = f.input :end_date, as: :datetime_picker, wrapper: :ranged_datetime
-        = f.input :number_of_guests ,:collection =>  1..10,:include_blank => true
-        = f.button :submit
+      = f.input :number_of_guests, :collection =>  1..10, :include_blank => true
+      = f.button :submit, 'Search'

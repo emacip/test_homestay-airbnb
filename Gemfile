@@ -52,3 +52,6 @@ gem "haml-rails", "~> 0.9"
 # Bootstrap Datepicker
 gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
 gem 'momentjs-rails'
+
+# Debugger
+gem 'byebug'

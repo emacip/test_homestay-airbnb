@@ -1,3 +1,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "bootstrap-datetimepicker";
+@import '_fonts';
+
+.jumbotron{
+  background-image: image-url("gt_visit_crop.png");
+  height: 500px;
+}
+
+.my_date{
+  width: 200px;
+}
