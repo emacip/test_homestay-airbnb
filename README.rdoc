@@ -23,8 +23,7 @@ I focus in the example with one guests because this database only focus in this 
 to support others paradigms.
 
 This is the code
-- @bookings = (Booking.search filter:{or:[{range:{number_of_guests:{gte: params[:booking][:number_of_guests]}}},
-              {range:{number_of_guests:{lt: params[:booking][:number_of_guests]}}}]},size:2001, sort:{room_id:{order: "asc"}}).records.to_a
+- @bookings = (Booking.search filter:{or:[{range:{number_of_guests:{gte: params[:booking][:number_of_guests]}}},{range:{number_of_guests:{lt: params[:booking][:number_of_guests]}}}]},size:2001, sort:{room_id:{order: "asc"}}).records.to_a
 
 I am tracking all the code with CodeClimate for know the quality.
 
@@ -32,7 +31,7 @@ For more questions please contact to me emacipbelmonte@gmail.com
 
 Thanks
 
-
+---------------------------------------------------------------------------------------------------------------
 
 The purpose of this test is to complete a simple Rails application that allows
 to search for available rooms in host families.
