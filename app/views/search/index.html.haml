@@ -11,6 +11,31 @@
 
       = f.input :number_of_guests, :collection =>  1..10, :include_blank => true, :input_class => false, :input_html => { :class => "guests" }
       = f.button :submit, 'Search'
+- if not @bookings.empty?
+  %hr
+  .text-center
+    = will_paginate @bookings
+  .row{style:"margin-top=20px;"}
 
-  - if not @bookings.empty?
-    = @bookings.map(&:id)
+    - @bookings.each do |room|
+      .room-block-element.col-lg-4
+        .room-block-header
+          = room.host.address
+        .room-block-image
+          %img{ itemprop: "image", src: "#{room.host.picture_url}", height:"150", width:"260"}
+        .room-block-text
+          .row
+            .col-lg-6
+              = room.host.name
+            .col-lg-6.text-right
+              = "#{room.capacity} rooms"
+              - room.bookings.each do |book|
+                - book.number_of_guests.times do
+                  %i.fa.fa-bed{style:"color:red;"}
+                - (room.capacity - book.number_of_guests).times do
+                  %i.fa.fa-bed
+              - if room.bookings.empty?
+                - room.capacity.times do
+                  %i.fa.fa-bed
+  .text-center
+    = will_paginate @bookings

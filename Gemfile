@@ -60,3 +60,6 @@ gem 'byebug'
 # ElasticSearch
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
+
+# Paginate
+gem 'will_paginate', '~> 3.0.6'
