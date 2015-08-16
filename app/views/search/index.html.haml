@@ -4,10 +4,13 @@
       %h2{style:'color:#FFF;text-align:center;'} TEST CODE HOMESTAY
 .row
   .col-md-12
-    = simple_form_for @booking, url: search_path, class:'form-inline', method: :get do |f|
+    = simple_form_for @booking, url: root_path, class:'form-inline', method: :get do |f|
       .row.datetimerange
         = f.input :start_date, as: :datetime_picker, wrapper: :ranged_datetime
         = f.input :end_date, as: :datetime_picker, wrapper: :ranged_datetime
 
       = f.input :number_of_guests, :collection =>  1..10, :include_blank => true, :input_class => false, :input_html => { :class => "guests" }
       = f.button :submit, 'Search'
+
+  - if not @bookings.empty?
+    = @bookings.map(&:id)
