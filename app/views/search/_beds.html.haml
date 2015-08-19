@@ -1,0 +1,13 @@
+- room.bookings.each do |book|
+  - if params[:booking][:start_date].to_date  == book.start_date
+    - book.number_of_guests.times do
+      %i.fa.fa-bed{style:"color:red;"}
+    - (room.capacity - book.number_of_guests).times do
+      %i.fa.fa-bed
+  - else
+    - room.capacity.times do
+      %i.fa.fa-bed
+
+- if room.bookings.empty?
+  - room.capacity.times do
+    %i.fa.fa-bed

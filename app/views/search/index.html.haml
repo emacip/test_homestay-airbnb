@@ -29,13 +29,7 @@
               = room.host.name
             .col-lg-6.text-right
               = "#{room.capacity} rooms"
-              - room.bookings.each do |book|
-                - book.number_of_guests.times do
-                  %i.fa.fa-bed{style:"color:red;"}
-                - (room.capacity - book.number_of_guests).times do
-                  %i.fa.fa-bed
-              - if room.bookings.empty?
-                - room.capacity.times do
-                  %i.fa.fa-bed
+              = render partial: 'beds', locals: {room: room}
+
   .text-center
     = will_paginate @bookings
