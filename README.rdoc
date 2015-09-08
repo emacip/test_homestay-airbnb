@@ -1,35 +1,6 @@
-{<img src="https://codeclimate.com/repos/55cdc12f69568061d500a2c9/badges/b16a5a0d3bcd855e7606/gpa.svg" />}[https://codeclimate.com/repos/55cdc12f69568061d500a2c9/feed]
-
-For do the task I decided using ElasticSearch, I know that for this data base I can do more easy and fast with ActiveRecord scopes
-but this is not the point for a massive data base like Homestay with millions of rows (scalability) Its possible search by address with smalls
-changes.
 
 Its necesary have ElasticSearch installed in your system.
 For more info visit https://www.elastic.co/guide/en/elasticsearch/reference/current/_basic_concepts.html
-
-I changed the database because I prefer using Postgres than sqlite.
-
-More things:
-
-Create the Index Booking
-- Booking.first.__elasticsearch__.index_document
-
-Import Documents Elasticsearch Booking
--  Booking.__elasticsearch__.import
-
-Do the same for the object Room.
-
-I focus in the example with one guests because this database only focus in this problem.
-to support others paradigms.
-
-This is the code
-- @bookings = (Booking.search filter:{or:[{range:{number_of_guests:{gte: params[:booking][:number_of_guests]}}},{range:{number_of_guests:{lt: params[:booking][:number_of_guests]}}}]},size:2001, sort:{room_id:{order: "asc"}}).records.to_a
-
-I am tracking all the code with CodeClimate for know the quality.
-
-For more questions please contact to me emacipbelmonte@gmail.com
-
-Thanks
 
 ---------------------------------------------------------------------------------------------------------------
 
@@ -101,7 +72,4 @@ There are a number of tasks to complete:
 4) Implement a basic JS/Client side validation for the dates
    - this is to understand how you structure javascript code
 
-Make sure to include instructions on how to run your code correctly for a quick review.
 
-Return the completed task as a .zip file or private repo in GitHub.
-Please do not open a public repository with your solution, you might not want to unwillingly help other candidates :)
